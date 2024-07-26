@@ -35,20 +35,20 @@ include('app/controlers/productos/listado_de_productos.php')
           <li class="nav-item">
             <a href="#nosotros" class="nav-link btn btn-outline-info" aria-current="page" href="#"> <i class="bi bi-house-door-fill"> </i>Nosotros</a>
           </li>
-          <a href=""></a>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-info" href="#">Clientes</a>
-          </li>
+          <a href="#testimonio"></a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle btn btn-outline-info" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ofrecemos
             </a>
             <ul class="dropdown-menu ">
-              <li><a class="dropdown-item" href="#">Nuestro Servicios</a></li>
-              <li><a class="dropdown-item" href="#">Nuestro Productos</a></li>
               <li>
+                <a class="dropdown-item" href="#">Nuestro Servicios</a>
               </li>
+              <li><a class="dropdown-item" href="#">Nuestro Productos</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-info" href="#testimonio">Testimonio</a>
           </li>
           <li class="nav-item">
 
@@ -119,7 +119,8 @@ include('app/controlers/productos/listado_de_productos.php')
   </section>
 
 
-  <section class="info" id="nosotros">
+
+  <section class="" id="nosotros">
     <div class="container py-sm-5 ">
       <div class="row">
         <div class="col-md-6  col-sm-12">
@@ -146,62 +147,128 @@ include('app/controlers/productos/listado_de_productos.php')
     </div>
   </section>
 
-  <section class="our-services ">
+  <section class=" info our-services ">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12">
           <br><br>
-          <h2>Nuestros <span class="text-info">servisios</span> </h2>
+          <h2>Nuestros <span class="text-info">Servisios</span> </h2>
         </div>
       </div>
 
       <div class="row align-items-center py-4">
         <div class="col-md-3 py-3 zoomp">
           <div class="card ">
-            <img src=" https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg" height="200px class=" card-img-top" alt="...">
+            <img src="public/images/servisio1.jpg" height="200px class=" card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
+              <h5 class="card-title text-center text-info">Consultas Generales y Exámenes de Rutina</h5>
+              <p class="card-text">
+
+                Realización de exámenes físicos completos ,
+
+                Diagnóstico y tratamiento de enfermedades comunes ,
+
+
+
               </p>
-              <a href="" class="btn btn-primary">Go somewhere</a>
+
             </div>
           </div>
         </div>
 
-        <div class="col-md-3  py-3 zoomp">
-          <div class="card" ">
-            <img src=" https://cdn.pixabay.com/photo/2024/01/18/17/46/ai-generated-8517306_1280.jpg " height=" 200px" class="card-img-top" alt="...">
+        <div class="col-md-3 py-3 zoomp">
+          <div class="card ">
+            <img src=" public/images/servisio2.webp" height="200px class=" card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
+              <h5 class="card-title text-center text-info">Vacunación</h5>
+              <p class="card-text">
+                Administración de vacunas esenciales ,
+                Programas de vacunación para cachorros y gatos jóvenes ,
+                Refuerzos anuales ,
+                Prevención de enfermedades graves ,
+
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
           </div>
         </div>
-        <div class="col-md-3  py-3 zoomp">
-          <div class="card">
-            <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px
-              class=" card-img-top" alt="...">
+
+        <div class="col-md-3 py-3 zoomp">
+          <div class="card ">
+            <img src=" public/images/servisio3.webp" height="200px class=" card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
+              <h5 class="card-title text-center text-info">Desparasitación</h5>
+              <p class="card-text">
+
+                Tratamientos regulares,
+                Programas de prevención,
+                Mejorar la salud y bienestar,
+                Prevención de zoonosis,
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
           </div>
         </div>
-        <div class="col-md-3   py-3  zoomp">
-          <img src="https://img.freepik.com/free-vector/adopt-from-shelter-give-pet-home_23-2148521774.jpg?t=st=1720590735~exp=1720594335~hmac=fcff67693a72dbb1198308e4ce4fd855d901c43a671b8c8c28c36dda4dab2469&w=826" width="100%" alt="">
+        <div class="col-md-3 py-3 zoomp">
+          <div class="card ">
+            <img src=" public/images/servisio4.jpg " height="200px class=" card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center text-info">Esterilización y Castración</h5>
+              <p class="card-text">
+
+                Cirugías para esterilizar y castrar,
+                Consejería pre y postoperatoria,
+                Control de la población de mascotas,
+                Beneficios de salud
+              </p>
+
+            </div>
+          </div>
         </div>
+
+
       </div>
     </div>
   </section>
 
-  <section class="galery">
+  <section class="our-services  ">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12">
+          <br><br>
+          <h2>Nuestros <span class="text-info">Productos</span> </h2>
+        </div>
+      </div>
+
+      <div class="row align-items-center py-4">
+        <?php
+        foreach ($productos as $producto) {
+        ?>
+          <div class="col-md-3 py-3 zoomp">
+            <div class="card ">
+              <img style="margin:20px 15px 0px 15px;" src="<?= $URL . "/public/images/productos/" . $producto['imagen'] ?> " height="200px class=" card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?= $producto['nombre_producto']; ?></h5>
+                <p class="card-text"><?= $producto['descripcion']; ?>
+                </p>
+                <p style="margin: 0; font-weight: bold ; font-size: 20px;">BS. <?= $producto['precio_venta']; ?></p>
+
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="info">
     <div class="container py-5 ">
       <h2>Nuestra <span class="text-info">Galeria </span> </h2>
       <div class="row">
@@ -239,7 +306,7 @@ include('app/controlers/productos/listado_de_productos.php')
   </section>
 
 
-  <section class="clientes">
+  <section class="clientes " id="testimonio">
     <div class="container py-5">
       <h2 class="text-center">Testimonios de <span class="text-info"> Clientes </span> </h2>
       <div class="row">
