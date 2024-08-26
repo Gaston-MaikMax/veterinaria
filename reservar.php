@@ -12,12 +12,20 @@ include('layout/parte1.php');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       locale: 'es',
-      events: [{
-        title: 'Cita con el veterinario',
-        start: '2024-08-01',
-        end: '2024-08-02',
-        color: 'red',
-      }]
+      editable: true,
+
+
+
+      events: 'app/controlers/reservas/cargar_reservas.php',
+
+      eventClick: function(info) {
+        alert('Event: ' + info.event.title);
+        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        alert('View: ' + info.view.type);
+
+        // change the border color just for fun
+        info.el.style.borderColor = 'red';
+      }
 
     });
     calendar.render();
