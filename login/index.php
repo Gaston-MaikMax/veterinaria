@@ -79,8 +79,8 @@ include('../app/config.php');
             <hr>
             <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar</button>
             <br><br>
-            <button class="btn btn-secondary" style="width: 100%;">Canselar</button>
 
+            <button class="btn btn-secondary" style="width: 100%; "> Canselar</button>
 
           </form>
 

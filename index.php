@@ -21,7 +21,7 @@ include('app/controlers/productos/listado_de_productos.php')
       <div class="carousel-item active" data-bs-interval="5000">
         <img src="https://cdn.pixabay.com/photo/2013/02/25/04/37/veterinary-85925_1280.jpg" height="600px" class="d-block w-100 bg-primary opacity-50" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <a href="" class="btn btn-outline-info btn-lg">Reserva cita</a>
+          <a href="reservar.php" class="btn btn-outline-info btn-lg">Reserva cita</a>
           <a href="" class="btn btn-info btn-lg">Ver Productos</a><br><br>
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
@@ -77,7 +77,7 @@ include('app/controlers/productos/listado_de_productos.php')
   </div>
 </section>
 
-<section class=" info our-services ">
+<section class=" info our-services  " id="Servisios">
   <div class="container py-5">
     <div class="row">
       <div class="col-md-12">
@@ -161,7 +161,7 @@ include('app/controlers/productos/listado_de_productos.php')
   </div>
 </section>
 
-<section class="our-services  ">
+<section class="our-services  " id="Productos">
   <div class="container py-5">
     <div class="row">
       <div class="col-md-12">

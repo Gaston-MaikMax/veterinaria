@@ -18,9 +18,9 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-      <a class="navbar-brand   " href="#" style="display: flex; align-items: center; gap: 10px;">
+      <a class="navbar-brand " href="index.php" style="display: flex; align-items: center; gap:5px;">
         <img src="public/images/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-        Bootstrap
+        Sabueso
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,9 +37,9 @@
             </a>
             <ul class="dropdown-menu ">
               <li>
-                <a class="dropdown-item" href="#">Nuestro Servicios</a>
+                <a class="dropdown-item" href="#Servisios">Nuestro Servicios</a>
               </li>
-              <li><a class="dropdown-item" href="#">Nuestro Productos</a></li>
+              <li><a class="dropdown-item" href="#Productos">Nuestro Productos</a></li>
             </ul>
           </li>
           <li class="nav-item">
