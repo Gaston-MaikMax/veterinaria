@@ -13,19 +13,30 @@ include('layout/parte1.php');
       initialView: 'dayGridMonth',
       locale: 'es',
       editable: true,
+      selectable: true,
+      allDaySlot: false,
 
 
 
       events: 'app/controlers/reservas/cargar_reservas.php',
 
-      eventClick: function(info) {
-        alert('Event: ' + info.event.title);
-        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-        alert('View: ' + info.view.type);
+      dateClick: function(info) {
+        var a = info.dateStr;
+        const fechaComoCadena = a;
+        var numeroDia = new Date(fechaComoCadena).getDay();
+        var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado , Domingo"];
 
-        // change the border color just for fun
-        info.el.style.borderColor = 'red';
-      }
+        if (numeroDia == '6') {
+          alert('No se puede reservar los domingos');
+        } else if (numeroDia == '5') {
+          alert('atencion solso en las mañanas');
+          $('#modal_reservas').modal('show');
+        } else {
+          $('#modal_reservas').modal('show');
+          $('#dia_de_la_semana').html(dias[numeroDia]);
+
+        }
+      },
 
     });
     calendar.render();
@@ -92,3 +103,25 @@ include('layout/parte1.php');
 <?php
 include('layout/parte2.php');
 ?>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_reservas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
