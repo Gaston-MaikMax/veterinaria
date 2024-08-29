@@ -186,16 +186,15 @@ include('layout/parte2.php');
                 <option value="SERVICIO 5">Esterilización y Castración</option>
               </select>
             </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label for="">Fecha de reserva</label>
-                <input type="text" class="form-control" id="fecha_reserva" disabled>
-              </div>
-              <div class="col-md-6">
-                <label for="">Hora de reserva</label>
-                <input type="text" class="form-control" id="hora_reserva" disabled>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="">Fecha de reserva</label>
+              <input type="text" class="form-control" id="fecha_reserva" disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="">Hora de reserva</label>
+              <input type="text" class="form-control" id="hora_reserva" disabled>
             </div>
           </div>
         </form>
