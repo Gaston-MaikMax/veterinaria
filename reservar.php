@@ -8,6 +8,9 @@ include('layout/parte1.php');
 
 <script>
   var a;
+  var $email_sesion = "<?php echo $email_sesion; ?>";
+  // alert($email_sesion);
+
 
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
@@ -28,16 +31,23 @@ include('layout/parte1.php');
         var numeroDia = new Date(fechaComoCadena).getDay();
         var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado , Domingo"];
 
-        if (numeroDia == '6') {
-          alert('No se puede reservar los domingos');
-        } else if (numeroDia == '5') {
-          alert('atencion solso en las mañanas');
-          $('#modal_reservas').modal('show');
-        } else {
-          $('#modal_reservas').modal('show');
-          $('#dia_de_la_semana').html(dias[numeroDia] + "  " + a);
+        if ($email_sesion == "") {
+          $('#modal_sesion').modal('show');
 
+        } else {
+
+          if (numeroDia == '6') {
+            alert('No se puede reservar los domingos');
+          } else if (numeroDia == '5') {
+            alert('atencion solso en las mañanas');
+            $('#modal_reservas').modal('show');
+          } else {
+            $('#modal_reservas').modal('show');
+            $('#dia_de_la_semana').html(dias[numeroDia] + "  " + a);
+
+          }
         }
+
       },
 
     });
@@ -108,9 +118,34 @@ include('layout/parte2.php');
 
 <!-- Button trigger modal -->
 
+<!-- Modal  sesion-->
+<div class="modal fade " id="modal_sesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+        <p>
+        <h3 class="text-center"> Para reservar una cita deve iniciar secion o registrarce </h3>
+        </p>
+        <br>
+        <center>
+          <div class="d-grid gap-2">
+            <a href="<?php echo $URL ?>/login" class="btn btn-primary" type="button">Iniciar sesion</a>
+            <a href="<?php echo $URL ?>/login/registro.php" class="btn btn-primary" type="button">Registrarce</a>
+          </div>
+        </center>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
-<!-- Modal -->
+
+<!-- Modal  reservas-->
 <div class="modal fade" id="modal_reservas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

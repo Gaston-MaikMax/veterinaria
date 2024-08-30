@@ -22,8 +22,8 @@ if (($contador > 0)  && (password_verify($password, $hash))) {
   echo "Bienvenido";
   session_start();
   $_SESSION['sesion_email'] = $email;
-  header('location:' . $URL . '/admin');
+  header('location:' . $URL . '/');
 } else {
   echo "Usuario no encontrado";
-  header('location:' . $URL . '/login');
+  header('location:' . $URL . '/');
 }
