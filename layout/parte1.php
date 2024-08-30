@@ -29,7 +29,7 @@ if (isset($_SESSION['sesion_email'])) {
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/css/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/css/style.css">
-  <link rel="stylesheet" href="<?php echo $URL; ?>//public//css/style.css">
+  <link rel="stylesheet" href="<?php echo $URL; ?>/public//css/style.css">
   <script src="public/js/jquery-3.7.1.slim.min.js"></script>
 
   <title>Sistema de Veterinario</title>
