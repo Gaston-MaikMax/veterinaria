@@ -20,12 +20,12 @@ include('../app/controlers/productos/listado_de_productos.php')
         Revisa bien tus datos
       </div>
       <div class="card-body">
-        <form action="">
+        <form action="../app/controlers/login/controller_registro.php" method="POST">
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label for="">Nombre del Usuario </label>
-                <input type="text" class="form-control">
+                <input type="text" name="nombre_completo" class="form-control">
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@ include('../app/controlers/productos/listado_de_productos.php')
             <div class="col-md-12">
               <div class="form-group">
                 <label for="">Correo Electronico</label>
-                <input type="email" class="form-control" require>
+                <input type="email" class="form-control" name="email">
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ include('../app/controlers/productos/listado_de_productos.php')
             <div class="col-md-12">
               <div class="form-group">
                 <label for="">Contraceña</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" name="password">
               </div>
             </div>
           </div>
@@ -52,13 +52,14 @@ include('../app/controlers/productos/listado_de_productos.php')
             <div class="col-md-12">
               <div class="form-group">
                 <label for="">Repita la Contraceña</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" name="password_repetido">
               </div>
             </div>
           </div>
           <hr>
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button">Registrarme</button>
+            <button class="btn btn-primary" type="sub
+            mit">Registrarme</button>
           </div>
         </form>
       </div>
@@ -72,4 +73,5 @@ include('../app/controlers/productos/listado_de_productos.php')
 
 <?php
 include('../layout/parte2.php');
+include('../admin/layout/mensaje.php');
 ?>

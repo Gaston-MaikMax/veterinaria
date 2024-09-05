@@ -422,4 +422,5 @@ include('app/controlers/productos/listado_de_productos.php')
 
 <?php
 include('layout/parte2.php');
+include('admin/layout/mensaje.php');
 ?>

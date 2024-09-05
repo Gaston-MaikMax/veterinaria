@@ -32,6 +32,9 @@ if (isset($_SESSION['sesion_email'])) {
   <link rel="stylesheet" href="<?php echo $URL; ?>/public//css/style.css">
   <script src="public/js/jquery-3.7.1.slim.min.js"></script>
 
+  <!-- swig alert 2  -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <title>Sistema de Veterinario</title>
 </head>
 
