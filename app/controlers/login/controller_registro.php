@@ -31,7 +31,7 @@ if ($contador > 0) {
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    // echo "son iguakles";
+    // echo "son iguales";
     $sentencia = $pdo->prepare("INSERT INTO tb_usuarios (nombre_completo, email, password, cargo, fyh_creacion) VALUES (:nombre_completo, :email, :password, :cargo , :fyh_creacion)");
     $sentencia->bindParam('nombre_completo', $nombre_completo);
     $sentencia->bindParam('email', $email);
@@ -43,7 +43,33 @@ if ($contador > 0) {
       session_start();
       $_SESSION['mensaje'] = "se registro el usuaria" . $nombre_completo . " corectamente";
       $_SESSION['icono'] = "success";
-      header('Location: ' . $URL . '/');
+
+
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $sql = "SELECT * FROM tb_usuarios WHERE email = '$email' ";
+      $query = $pdo->prepare($sql);
+      $query->execute();
+      $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
+
+      $contador = 0;
+      foreach ($usuarios as $usuario) {
+        $contador = $contador + 1;
+        $password_tabla = $usuario['password'];
+      }
+
+      $hash = $password_tabla;
+
+      if (($contador > 0)  && (password_verify($password, $hash))) {
+        echo "Bienvenido";
+        session_start();
+        $_SESSION['sesion_email'] = $email;
+        header('location:' . $URL . '/');
+      } else {
+        echo "Usuario no encontrado";
+        header('location:' . $URL . '/');
+      }
     } else {
       session_start();
       $_SESSION['mensaje'] = "erro al registrar el usuario";
