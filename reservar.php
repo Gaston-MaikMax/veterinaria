@@ -45,6 +45,19 @@ include('layout/parte1.php');
             $('#modal_reservas').modal('show');
             $('#dia_de_la_semana').html(dias[numeroDia] + "  " + a);
 
+            var fecha = info.dateStr;
+            var res = "";
+            var url = "app/controlers/reservas/verificar_horario.php";
+
+            $.get(url, {
+              fecha: fecha
+            }, function(datos) {
+              res = datos;
+              if (res == "ocupado") {
+                alert('La fecha seleccionada ya esta ocupada');
+              }
+            });
+
           }
         }
 
@@ -114,6 +127,8 @@ include('layout/parte1.php');
 
 <?php
 include('layout/parte2.php');
+include('admin/layout/mensaje.php');
+
 ?>
 
 <!-- Button trigger modal -->
@@ -223,29 +238,27 @@ include('layout/parte2.php');
               <div class="col-md-6">
                 <label for="">Fecha de reserva</label>
                 <input type="text" class="form-control" id="fecha_reserva" disabled>
-                <input type="text" name="fecha_reserva" class="form-control" id="fecha_reserva2" hidden>
+                <input type="text" name="fecha_cita" class="form-control" id="fecha_reserva2" hidden>
               </div>
               <div class="col-md-6">
                 <label for="">Hora de reserva</label>
                 <input type="text" class="form-control" id="hora_reserva" disabled>
-                <input type="text" name="hora_reserva" class="form-control" id="hora_reserva2" hidden>
-
+                <input type="text" name="hora_cita" class="form-control" id="hora_reserva2" hidden>
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-md-6">
                 <label for="">Nombre de la mascota</label>
-                <input type="text" name="nombre_mascota" class="form-control">
+                <input type="text" name="nombre_mascota" class="form-control" required>
               </div>
               <div class="col-md-6">
                 <label for="">Tipo de Servicio </label>
                 <select name="tipo_servicio" id="" class="form-control">
-                  <option value="SERVICIO 1">Consulta General</option>
-                  <option value="SERVICIO 2">Vacunación Y Desparasitación</option>
-                  <option value="SERVICIO 3">Peluquería y Estética Canina</option>
-                  <option value="SERVICIO 4">Servicio de Domicilio</option>
-                  <option value="SERVICIO 5">Esterilización y Castración</option>
+                  <option value="Consulta General">Consulta General</option>
+                  <option value="Vacunación Y Desparasitación">Vacunación Y Desparasitación</option>
+                  <option value="Peluquería y Estética Canina">Peluquería y Estética Canina</option>
+                  <option value="Esterilización y Castración">Esterilización y Castración</option>
                 </select>
               </div>
             </div>
