@@ -208,6 +208,16 @@ include('layout/parte2.php');
         <form action="">
           <div class="row">
             <div class="col-md-6">
+              <label for="">Nombre del Usuario</label>
+              <input type="text" class="form-control" value="<?php echo $nombre_completo_sesion ?>" disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="">Correo Electronico</label>
+              <input type="text" class="form-control" value="<?php echo $email_sesion ?>" disabled>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <label for="">Nombre de la mascota</label>
               <input type="text" class="form-control">
             </div>
