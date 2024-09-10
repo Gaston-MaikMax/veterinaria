@@ -11,6 +11,7 @@ if (isset($_SESSION['sesion_email'])) {
   foreach ($usuarios as $usuario) {
     $id_usuario_sesion = $usuario['id_usuario'];
     $cargo_sesion = $usuario['cargo'];
+    $nombre_completo_sesion = $usuario['nombre_completo'];
   }
 } else {
   // echo "no a pasado por el login";
