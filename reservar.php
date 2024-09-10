@@ -181,8 +181,8 @@ include('layout/parte2.php');
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
       </div>
     </div>
   </div>
@@ -205,50 +205,60 @@ include('layout/parte2.php');
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="">Nombre del Usuario</label>
-              <input type="text" class="form-control" value="<?php echo $nombre_completo_sesion ?>" disabled>
+        <div class="row">
+          <form action="<?php echo $URL; ?>/app/controlers/reservas/controller_reservas.php" method="post">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Nombre del Usuario</label>
+                <input type="text" class="form-control" value="<?php echo $nombre_completo_sesion ?>" disabled>
+              </div>
+              <div class="col-md-6">
+                <label for="">Correo Electronico</label>
+                <input type="text" class="form-control" value="<?php echo $email_sesion ?>" disabled>
+                <input type="text" name="id_usuario" value="<?php echo $id_usuario_sesion; ?>" hidden>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="">Correo Electronico</label>
-              <input type="text" class="form-control" value="<?php echo $email_sesion ?>" disabled>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Fecha de reserva</label>
+                <input type="text" class="form-control" id="fecha_reserva" disabled>
+                <input type="text" name="fecha_reserva" class="form-control" id="fecha_reserva2" hidden>
+              </div>
+              <div class="col-md-6">
+                <label for="">Hora de reserva</label>
+                <input type="text" class="form-control" id="hora_reserva" disabled>
+                <input type="text" name="hora_reserva" class="form-control" id="hora_reserva2" hidden>
+
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <label for="">Nombre de la mascota</label>
-              <input type="text" class="form-control">
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Nombre de la mascota</label>
+                <input type="text" name="nombre_mascota" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label for="">Tipo de Servicio </label>
+                <select name="tipo_servicio" id="" class="form-control">
+                  <option value="SERVICIO 1">Consulta General</option>
+                  <option value="SERVICIO 2">Vacunación Y Desparasitación</option>
+                  <option value="SERVICIO 3">Peluquería y Estética Canina</option>
+                  <option value="SERVICIO 4">Servicio de Domicilio</option>
+                  <option value="SERVICIO 5">Esterilización y Castración</option>
+                </select>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="">Tipo de Servicio </label>
-              <select name="" id="" class="form-control">
-                <option value="SERVICIO 1">Consulta General</option>
-                <option value="SERVICIO 2">Vacunación Y Desparasitación</option>
-                <option value="SERVICIO 3">Peluquería y Estética Canina</option>
-                <option value="SERVICIO 4">Servicio de Domicilio</option>
-                <option value="SERVICIO 5">Esterilización y Castración</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <label for="">Fecha de reserva</label>
-              <input type="text" class="form-control" id="fecha_reserva" disabled>
-            </div>
-            <div class="col-md-6">
-              <label for="">Hora de reserva</label>
-              <input type="text" class="form-control" id="hora_reserva" disabled>
-            </div>
-          </div>
-        </form>
+
+
+        </div>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Registrar Cita</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -256,10 +266,64 @@ include('layout/parte2.php');
 
 
 <script>
-  $('#btn_h1').click(function() {
+  $('#btn_h1, #btn_h2, #btn_h3, #btn_h4, #btn_h5, #btn_h6, #btn_h7, #btn_h8').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = $(this).text();
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+
+  });
+
+  /*
+   $('#btn_h1').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
     var h1 = "08:00 - 09:00";
     $('#hora_reserva').val(h1);
   });
+  $('#btn_h2').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "09:00 - 10:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h3').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "10:00 - 11:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h4').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "11:00 - 12:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h5').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "14:00 - 15:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h6').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "15:00 - 16:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h7').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "16:00 - 17:00";
+    $('#hora_reserva').val(h1);
+  });
+  $('#btn_h8').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    var h1 = "17:00 - 18:00";
+    $('#hora_reserva').val(h1);
+  }); 
+  */
 </script>
