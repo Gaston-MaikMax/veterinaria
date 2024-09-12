@@ -22,14 +22,14 @@ include('layout/parte1.php');
       allDaySlot: false,
 
 
-
+      events: 'app/controlers/reservas/cargar_reservas.php',
       events: 'app/controlers/reservas/cargar_reservas.php',
 
       dateClick: function(info) {
         a = info.dateStr;
         const fechaComoCadena = a;
         var numeroDia = new Date(fechaComoCadena).getDay();
-        var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado , Domingo"];
+        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO , DOMINGO"];
 
         if ($email_sesion == "") {
           $('#modal_sesion').modal('show');
@@ -53,10 +53,10 @@ include('layout/parte1.php');
               fecha: fecha
             }, function(datos) {
               res = datos;
-              if (res == "ocupado") {
-                alert('La fecha seleccionada ya esta ocupada');
-              }
+              console.log(res)
+              $('#respuesta_horario').html(res);
             });
+
 
           }
         }
@@ -128,7 +128,7 @@ include('layout/parte1.php');
 <?php
 include('layout/parte2.php');
 include('admin/layout/mensaje.php');
-
+// include('app/controlers/reservas/verificar_horario.php');
 ?>
 
 <!-- Button trigger modal -->
@@ -170,10 +170,11 @@ include('admin/layout/mensaje.php');
       </div>
       <div class="modal-body">
         <div class="row">
+          <div class="" id="respuesta_horario"></div>
           <div class="col-md-6">
+            <center><b>Turno Mañana</b></center>
+            <br>
             <div class="d-grid gap-2">
-              <center><b>Turno Mañana</b></center>
-              <br>
               <button class="btn btn-success" id="btn_h1" data-bs-dismiss="modal" type="button">08:00 - 09:00 </button>
               <button class="btn btn-success" id="btn_h2" data-bs-dismiss="modal" type="button">09:00 - 10:00 </button>
               <button class="btn btn-success" id="btn_h3" data-bs-dismiss="modal" type="button">10:00 - 11:00 </button>
@@ -182,10 +183,10 @@ include('admin/layout/mensaje.php');
             </div>
           </div>
           <div class="col-md-6">
-            <div class="d-grid gap-2">
 
-              <center><b>Turno Tarde </b></center>
-              <br>
+            <center><b>Turno Tarde </b></center>
+            <br>
+            <div class="d-grid gap-2">
               <button class="btn btn-success" id="btn_h5" data-bs-dismiss="modal" type="button">14:00 - 15:00 </button>
               <button class="btn btn-success" id="btn_h6" data-bs-dismiss="modal" type="button">15:00 - 16:00 </button>
               <button class="btn btn-success" id="btn_h7" data-bs-dismiss="modal" type="button">16:00 - 17:00 </button>
@@ -196,7 +197,7 @@ include('admin/layout/mensaje.php');
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
 
       </div>
     </div>
@@ -268,7 +269,7 @@ include('admin/layout/mensaje.php');
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-primary">Registrar Cita</button>
       </div>
       </form>
@@ -279,6 +280,7 @@ include('admin/layout/mensaje.php');
 
 
 <script>
+  /*
   $('#btn_h1, #btn_h2, #btn_h3, #btn_h4, #btn_h5, #btn_h6, #btn_h7, #btn_h8').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
@@ -288,55 +290,72 @@ include('admin/layout/mensaje.php');
     $('#hora_reserva2').val(h1);
 
   });
+*/
 
-  /*
-   $('#btn_h1').click(function() {
+  $('#btn_h1').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "08:00 - 09:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+
   });
   $('#btn_h2').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "09:00 - 10:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+
   });
   $('#btn_h3').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "10:00 - 11:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
   });
   $('#btn_h4').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "11:00 - 12:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
   });
   $('#btn_h5').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "14:00 - 15:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
   });
   $('#btn_h6').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "15:00 - 16:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
   });
   $('#btn_h7').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "16:00 - 17:00";
     $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
   });
   $('#btn_h8').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
     var h1 = "17:00 - 18:00";
     $('#hora_reserva').val(h1);
-  }); 
-  */
+    $('#hora_reserva2').val(h1);
+  });
 </script>
