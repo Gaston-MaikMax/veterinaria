@@ -6,7 +6,7 @@ $fecha = $_GET['fecha'];
 
 $hora_cita = "";
 
-$query  = $pdo->prepare("SELECT * FROM tb_reservas where  fecha_cita = '$fecha'");
+$query  = $pdo->prepare("SELECT * FROM tb_reservas where fecha_cita = '$fecha'");
 $query->execute();
 $datos = $query->fetchAll(PDO::FETCH_ASSOC);
 
