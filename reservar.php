@@ -9,7 +9,7 @@ include('layout/parte1.php');
 <script>
   var a;
   var $email_sesion = "<?php echo $email_sesion; ?>";
-  // alert($email_sesion);
+
 
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -22,7 +22,6 @@ include('layout/parte1.php');
       allDaySlot: false,
 
 
-      events: 'app/controlers/reservas/cargar_reservas.php',
       events: 'app/controlers/reservas/cargar_reservas.php',
 
       dateClick: function(info) {
@@ -53,14 +52,10 @@ include('layout/parte1.php');
               fecha: fecha
             }, function(datos) {
               res = datos;
-              console.log(res)
               $('#respuesta_horario').html(res);
             });
-
-
           }
         }
-
       },
 
     });
@@ -165,7 +160,8 @@ include('admin/layout/mensaje.php');
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span></h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span>
+        </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -196,10 +192,6 @@ include('admin/layout/mensaje.php');
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-
-      </div>
     </div>
   </div>
 </div>
@@ -209,7 +201,6 @@ include('admin/layout/mensaje.php');
 <script>
   $('#btn_h1').click(function() {
     $('#modal_formulario').modal('show');
-
   });
 </script>
 
@@ -280,7 +271,6 @@ include('admin/layout/mensaje.php');
 
 
 <script>
-  /*
   $('#btn_h1, #btn_h2, #btn_h3, #btn_h4, #btn_h5, #btn_h6, #btn_h7, #btn_h8').click(function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
@@ -288,74 +278,74 @@ include('admin/layout/mensaje.php');
     var h1 = $(this).text();
     $('#hora_reserva').val(h1);
     $('#hora_reserva2').val(h1);
+  });
 
-  });
-*/
+  /*
+    $('#btn_h1').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "08:00 - 09:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
 
-  $('#btn_h1').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "08:00 - 09:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h2').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "09:00 - 10:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
 
-  });
-  $('#btn_h2').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "09:00 - 10:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-
-  });
-  $('#btn_h3').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "10:00 - 11:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
-  $('#btn_h4').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "11:00 - 12:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
-  $('#btn_h5').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "14:00 - 15:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
-  $('#btn_h6').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "15:00 - 16:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
-  $('#btn_h7').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "16:00 - 17:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
-  $('#btn_h8').click(function() {
-    $('#modal_formulario').modal('show');
-    $('#fecha_reserva').val(a);
-    $('#fecha_reserva2').val(a);
-    var h1 = "17:00 - 18:00";
-    $('#hora_reserva').val(h1);
-    $('#hora_reserva2').val(h1);
-  });
+    });
+    $('#btn_h3').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "10:00 - 11:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h4').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "11:00 - 12:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h5').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "14:00 - 15:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h6').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "15:00 - 16:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h7').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "16:00 - 17:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    $('#btn_h8').click(function() {
+      $('#modal_formulario').modal('show');
+      $('#fecha_reserva').val(a);
+      $('#fecha_reserva2').val(a);
+      var h1 = "17:00 - 18:00";
+      $('#hora_reserva').val(h1);
+      $('#hora_reserva2').val(h1);
+    });
+    */
 </script>

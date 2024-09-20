@@ -22,7 +22,7 @@ include('app/controlers/productos/listado_de_productos.php')
         <img src="https://cdn.pixabay.com/photo/2013/02/25/04/37/veterinary-85925_1280.jpg" height="600px" class="d-block w-100 bg-primary opacity-50" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-outline-info btn-lg">Reserva cita</a>
-          <a href="" class="btn btn-info btn-lg">Ver Productos</a><br><br>
+          <a href="#Productos" class="btn btn-info btn-lg">Ver Productos</a><br><br>
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
@@ -31,7 +31,7 @@ include('app/controlers/productos/listado_de_productos.php')
         <img src="https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434227_960_720.jpg" height="600px" class="d-block w-100 opacity-50" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-outline-info btn-lg">Reserva cita</a>
-          <a href="" class="btn btn-info btn-lg">Ver Productos</a><br><br>
+          <a href="#Productos" class="btn btn-info btn-lg">Ver Productos</a><br><br>
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
