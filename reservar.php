@@ -28,7 +28,7 @@ include('layout/parte1.php');
         a = info.dateStr;
         const fechaComoCadena = a;
         var numeroDia = new Date(fechaComoCadena).getDay();
-        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO , DOMINGO"];
+        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
 
         if ($email_sesion == "") {
           $('#modal_sesion').modal('show');
@@ -156,17 +156,16 @@ include('admin/layout/mensaje.php');
 
 
 <!-- Modal  reservas-->
-<div class="modal fade" id="modal_reservas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_reservas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu cita para el dia <span id="dia_de_la_semana"></span>
-        </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+
       <div class="modal-body">
+        <h2 class="text-center"> <span class="text-info">Reserva</span> tu cita</h2>
+        <hr>
         <div class="row">
-          <div class="" id="respuesta_horario"></div>
+          <div id="respuesta_horario"></div>
           <div class="col-md-6">
             <center><b>Turno Mañana</b></center>
             <br>
@@ -192,6 +191,11 @@ include('admin/layout/mensaje.php');
           </div>
         </div>
       </div>
+      <div class="modal-footer">
+        <a href="" class="btn btn-secondary">
+          Escojer otra fecha
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -204,7 +208,7 @@ include('admin/layout/mensaje.php');
   });
 </script>
 
-<div class="modal fade" id="modal_formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class=" modal fade" id="modal_formulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
