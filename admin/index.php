@@ -3,6 +3,8 @@ include('../app/config.php');
 include('../admin/layout/parte1.php');
 include('../app/controlers/usuarios/listados_usuarios.php');
 include('../app/controlers/productos/listado_de_productos.php');
+include('../app/controlers/reservas/listado_reservas.php');
+
 
 
 
@@ -57,6 +59,29 @@ include('../app/controlers/productos/listado_de_productos.php');
         <a href="<?= $URL . "/admin//porductos/"; ?>" class="small-box-footer">Mas Informacion<i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
+
+    <div class="col-lg-3 col-6">
+      <!-- small box -->
+      <div class="small-box bg-success">
+        <div class="inner">
+          <?php
+          $contador_de_reservas = 0;
+          foreach ($reservas as $reserva) {
+            $contador_de_reservas = $contador_de_reservas + 1;
+          }
+          ?>
+          <h3><?= $contador_de_reservas ?></h3>
+
+          <p>Reservas Registrados </p>
+        </div>
+        <div class="icon">
+          <i class="ion ">
+            <i class="bi bi-layout-text-window-reverse"></i> </i>
+        </div>
+        <a href="<?= $URL . "/admin/reservas/"; ?>" class="small-box-footer">Mas Informacion<i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
   </div>
 </div>
 <?php

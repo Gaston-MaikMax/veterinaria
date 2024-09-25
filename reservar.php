@@ -10,8 +10,6 @@ include('layout/parte1.php');
   var a;
   var $email_sesion = "<?php echo $email_sesion; ?>";
 
-
-
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -20,44 +18,57 @@ include('layout/parte1.php');
       editable: true,
       selectable: true,
       allDaySlot: false,
-
-
       events: 'app/controlers/reservas/cargar_reservas.php',
 
       dateClick: function(info) {
         a = info.dateStr;
         const fechaComoCadena = a;
         var numeroDia = new Date(fechaComoCadena).getDay();
-        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
+        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES"];
 
         if ($email_sesion == "") {
           $('#modal_sesion').modal('show');
 
         } else {
 
-          if (numeroDia == '6') {
-            alert('No se puede reservar los domingos');
-          } else if (numeroDia == '5') {
-            alert('atencion solso en las mañanas');
-            $('#modal_reservas').modal('show');
+          if (numeroDia == '5') {
+            alert('no hay atencion  sabados');
+          } else if (numeroDia == '6') {
+            alert('no hay atencion  domingos');
           } else {
-            $('#modal_reservas').modal('show');
-            $('#dia_de_la_semana').html(dias[numeroDia] + "  " + a);
+            /*
+            var ano = new Date().getFullYear();
+            var mes = new Date().getMonth() + 1;
+            var dia = new Date().getDate();
+            var hoy = ano + "-" + mes + "-" + dia;
+            */
+            var hoy = new Date().toISOString().split('T')[0];
 
-            var fecha = info.dateStr;
-            var res = "";
-            var url = "app/controlers/reservas/verificar_horario.php";
+            if (hoy <= a) {
 
-            $.get(url, {
-              fecha: fecha
-            }, function(datos) {
-              res = datos;
-              $('#respuesta_horario').html(res);
-            });
+              $('#modal_reservas').modal('show');
+              $('#dia_de_la_semana').html(dias[numeroDia] + "  " + a);
+
+              var fecha = info.dateStr;
+              var res = "";
+              var url = "app/controlers/reservas/verificar_horario.php";
+
+              $.get(url, {
+                fecha: fecha
+              }, function(datos) {
+                res = datos;
+                $('#respuesta_horario').html(res);
+              });
+
+            } else {
+              alert("día no hábil");
+            }
+
+
+
           }
         }
       },
-
     });
     calendar.render();
   });
@@ -275,7 +286,9 @@ include('admin/layout/mensaje.php');
 
 
 <script>
-  $('#btn_h1, #btn_h2, #btn_h3, #btn_h4, #btn_h5, #btn_h6, #btn_h7, #btn_h8').click(function() {
+  $('#btn_h1, #btn_h2, #btn_h3, #btn_h4, #btn_h5, #btn_h6, #btn_h7, #btn_h8').click
+  /*
+  (function() {
     $('#modal_formulario').modal('show');
     $('#fecha_reserva').val(a);
     $('#fecha_reserva2').val(a);
@@ -283,73 +296,72 @@ include('admin/layout/mensaje.php');
     $('#hora_reserva').val(h1);
     $('#hora_reserva2').val(h1);
   });
+*/
 
-  /*
-    $('#btn_h1').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "08:00 - 09:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
+  $('#btn_h1').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "08:00 - 09:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
 
-    });
-    $('#btn_h2').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "09:00 - 10:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h2').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "09:00 - 10:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
 
-    });
-    $('#btn_h3').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "10:00 - 11:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    $('#btn_h4').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "11:00 - 12:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    $('#btn_h5').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "14:00 - 15:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    $('#btn_h6').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "15:00 - 16:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    $('#btn_h7').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "16:00 - 17:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    $('#btn_h8').click(function() {
-      $('#modal_formulario').modal('show');
-      $('#fecha_reserva').val(a);
-      $('#fecha_reserva2').val(a);
-      var h1 = "17:00 - 18:00";
-      $('#hora_reserva').val(h1);
-      $('#hora_reserva2').val(h1);
-    });
-    */
+  });
+  $('#btn_h3').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "10:00 - 11:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h4').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "11:00 - 12:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h5').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "14:00 - 15:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h6').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "15:00 - 16:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h7').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "16:00 - 17:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
+  $('#btn_h8').click(function() {
+    $('#modal_formulario').modal('show');
+    $('#fecha_reserva').val(a);
+    $('#fecha_reserva2').val(a);
+    var h1 = "17:00 - 18:00";
+    $('#hora_reserva').val(h1);
+    $('#hora_reserva2').val(h1);
+  });
 </script>

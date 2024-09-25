@@ -11,6 +11,9 @@ if (isset($_SESSION['sesion_email'])) {
     $id_usuario_sesion = $usuario['id_usuario'];
     $cargo_sesion = $usuario['cargo'];
   }
+  if ($cargo_sesion == 'CLIENTE') {
+    header('location:' . $URL . '/');
+  }
 } else {
   // echo "no a pasado por el login";
   header('location:' . $URL . '/login');
@@ -36,12 +39,17 @@ if (isset($_SESSION['sesion_email'])) {
   <!-- swig alert 2  -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -179,6 +187,26 @@ if (isset($_SESSION['sesion_email'])) {
                 </li>
               </ul>
             </li>
+
+            <li class="nav-item ">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                  reservas
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo $URL; ?> /admin/reservas/" class="nav-link ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Listado de reservas</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
             <li class="nav-item ">
               <a href="<?php echo $URL; ?>/app//controlers/login/cerrar_sesion.php" class="nav-link active " style="background: red;">
                 <i class="nav-icon fas fa-door-open"></i>

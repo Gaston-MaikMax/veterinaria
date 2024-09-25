@@ -22,7 +22,7 @@ foreach ($datos as $dato) {
       $num = $i + 1;
       $hora_res = "#btn_h" . $num;
       echo "<script> $('$hora_res').attr('disabled', true);
-      $('$hora_res').css('background-color','black' )</script>";
+      $('$hora_res').css('background-color','#0dcaf0' )</script>";
     }
   }
 }
