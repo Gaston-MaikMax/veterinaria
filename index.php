@@ -20,20 +20,26 @@ include('app/controlers/productos/listado_de_productos.php')
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
         <img src="https://cdn.pixabay.com/photo/2013/02/25/04/37/veterinary-85925_1280.jpg" height="600px" class="d-block w-100 bg-primary opacity-50" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-outline-info btn-lg">Reserva cita</a>
-          <a href="#Productos" class="btn btn-info btn-lg">Ver Productos</a><br><br>
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+        <div class="carousel-caption d-block">
+          <div class="d-flex flex-column  justify-content-center flex-md-row gap-2 ">
+            <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-info btn-lg w-100 ">Reserva cita</a>
+            <a href="#Productos" class="btn btn-info btn-lg w-100 ">Ver Productos</a>
+          </div>
+          <br>
+          <h5>Ayuda a tu Mascota</h5>
+          <p>Tráelo aquí a Veterinaria Sabueso</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="5000">
         <img src="https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434227_960_720.jpg" height="600px" class="d-block w-100 opacity-50" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-outline-info btn-lg">Reserva cita</a>
-          <a href="#Productos" class="btn btn-info btn-lg">Ver Productos</a><br><br>
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+        <div class="carousel-caption d-block">
+          <div class="d-flex flex-column flex-md-row gap-2 justify-content-center">
+            <a href="<?php echo $URL; ?>/reservar.php" class="btn btn-info btn-lg w-100 ">Reserva cita</a>
+            <a href="#Productos" class="btn btn-info btn-lg w-100 ">Ver Productos</a>
+          </div>
+          <br>
+          <h5>Ayuda a tu Mascota</h5>
+          <p>Tráelo aquí a Veterinaria Sabueso</p>
         </div>
       </div>
     </div>
@@ -70,7 +76,7 @@ include('app/controlers/productos/listado_de_productos.php')
         <br>
         <div class="">
 
-          <a href="" class="btn btn-outline-info btn-lg">Saber sobre nosotros</a>
+
         </div>
       </div>
     </div>
@@ -97,8 +103,6 @@ include('app/controlers/productos/listado_de_productos.php')
               Realización de exámenes físicos completos ,
 
               Diagnóstico y tratamiento de enfermedades comunes ,
-
-
 
             </p>
 
@@ -251,36 +255,30 @@ include('app/controlers/productos/listado_de_productos.php')
             <div class="row">
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Diego Fernández</h5>
+                    <p class="card-text">Mi perro, Max, es muy miedoso y siempre se pone nervioso en las visitas al veterinario. Pero en Veterinaria Sabueso, el personal fue muy paciente y cariñoso con él. Max se sintió cómodo y tranquilo durante toda la consulta. ¡Recomiendo esta clínica a todos los dueños de mascotas nerviosas!
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Sofía Ramírez</h5>
+                    <p class="card-text">Llevé a mi gata, Luna, a Veterinaria Sabueso porque estaba muy enferma. El equipo fue increíblemente amable y profesional. Me explicaron todo el proceso de tratamiento y me mantuvieron informada en todo momento. Luna se recuperó por completo y ahora está más juguetona que nunca. ¡Gracias, Veterinaria Sabueso
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Isabella Torres</h5>
+                    <p class="card-text">Tuve que llevar a mi conejo, Oreo, de urgencia a Veterinaria Sabueso porque se había roto una pata. El veterinario lo atendió de inmediato y le hizo una cirugía. Oreo se recuperó muy bien y ahora puede correr y saltar como antes. ¡Estoy muy agradecido con el excelente servicio que recibimos
                     </p>
                   </div>
                 </div>
@@ -291,36 +289,31 @@ include('app/controlers/productos/listado_de_productos.php')
             <div class="row">
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Mateo Vargas</h5>
+                    <p class="card-text">En Veterinaria Sabueso, encontré un equipo de profesionales apasionados por los animales. Se nota que realmente se preocupan por el bienestar de las mascotas. Además, las instalaciones son modernas y limpias. ¡Me siento muy tranquila llevando a mis animales a esta clínica!
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1525875975471-999f65706a10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Lucía Mendoza</h5>
+                    <p class="card-text">SMi tortuga, Shelly, tenía un problema en su caparazón y estaba muy preocupada. En Veterinaria Sabueso, le hicieron un tratamiento especializado y ahora está sana y feliz. ¡Gracias por cuidar de mi pequeña Shelly!
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
+
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Valentina Castro</h5>
+                    <p class="card-text">Después de visitar varias veterinarias, finalmente encontré Veterinaria Sabueso. El trato es excepcional, los precios son justos y el personal es muy atento. Mi perro, Toby, está encantado con sus visitas al veterinario. ¡Gracias por cuidar tan bien de mi mascota
                     </p>
                   </div>
                 </div>
@@ -331,36 +324,30 @@ include('app/controlers/productos/listado_de_productos.php')
             <div class="row">
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=1448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Andrés Herrera</h5>
+                    <p class="card-text">Llevé a mi canario, Pío, a Veterinaria Sabueso porque no cantaba como antes. El veterinario descubrió que tenía una infección respiratoria y le dio el tratamiento adecuado. Ahora Pío canta todo el día. ¡Estoy muy contenta con el servicio!
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1596215143922-eedeaba0d91c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Camila Ríos</h5>
+                    <p class="card-text">Mi hurón, Flash, se había escapado y volvió con una herida. En Veterinaria Sabueso, lo atendieron de inmediato y le hicieron una pequeña cirugía. Se recuperó muy rápido y ahora está como nuevo. ¡Gracias por cuidar de mi travieso Flash!
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="card">
-                  <img src="https://cdn.pixabay.com/photo/2024/03/02/13/05/orange-parrots-8608540_1280.jpg" height="200px" class=" card-img-top" alt="...">
+                  <img src="https://images.unsplash.com/photo-1642349775309-2dbeda905d6c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" class=" card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                      the card's
-                      content.
+                    <h5 class="card-title">Santiago Jiménez</h5>
+                    <p class="card-text">En Veterinaria Sabueso, encontré un equipo de profesionales muy atentos y capacitados. Me explicaron todo el proceso de vacunación de mis cachorros y me dieron consejos muy útiles para su cuidado. ¡Recomiendo esta clínica a todos los dueños de mascotas
                     </p>
                   </div>
                 </div>
