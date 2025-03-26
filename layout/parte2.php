@@ -27,18 +27,16 @@
       <div class="col-md-4">
         <h5 class="text-center">Contáctanos</h5>
         <ul class="list-unstyled">
-          <li><i class="bi bi-envelope"></i> contacto@tudominio.com</li>
-          <li><i class="bi bi-phone"></i> +123 456 7890</li>
+          <li><i class="bi bi-envelope"></i> veterinariaSabueso@gmail.com</li>
+          <li><i class="bi bi-phone"></i> 72544954 </li>
           <li>
-            <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/100063705123680/about/?_rdr" target="_blank" class="text-white me-2"><i class="bi bi-facebook"></i></a>
           </li>
         </ul>
       </div>
     </div>
     <div class="text-center py-3">
-      &copy; 2024 Gaston Condori. Todos los derechos reservados.
+      &copy; 2025 Gaston Condori. Todos los derechos reservados.
     </div>
   </div>
 </footer>
